@@ -1,37 +1,69 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title> Formatting Tags</title>
-</head>
-<body><style>
-    h2
-        {
-         text-align: center;
-    color: red;
+    <title>Formatting Tags Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+        }
+        h2 {
+            text-align: center;
+            color: red;
+        }
+        h3 {
+            text-align: center;
+            color: orange;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .box {
+            width: 40%;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: #fff;
+        }
+        .box h3 {
+            text-align: left;
         }
     </style>
-    <h2> 
-        <b>-bold</b>
-        <br>
-        <br>
-        <i>- Italic text</i>
-        <br>
-        <br>
-        <mark>- Marked text</mark>
-        <br>
-        <br>
-        <small>- Smaller text</small>
-        <br>
-        <br>
-        <del>- Deleted text</del>
-        <br>
-        <br>
-        <ins>- Inserted text</ins>
-        <br>
-        <br>
-        <sub>- Subscript text</sub>
-        <br>
-        <br>
-        <sup>- Superscript text</sup>
-    </h2>
+</head>
+<body>
+
+    <h2>HTML Formatting Tags Example</h2>
+
+    <div class="container">
+        <!-- Left Side -->
+        <div class="box">
+            <h3>Output</h3>
+            <p><b>Bold Text</b></p>
+            <p><i>Italic Text</i></p>
+            <p><mark>Marked Text</mark></p>
+            <p><small>Smaller Text</small></p>
+            <p><del>Deleted Text</del></p>
+            <p><ins>Inserted Text</ins></p>
+            <p>H<sub>2</sub>O (Subscript)</p>
+            <p>5<sup>2</sup> = 25 (Superscript)</p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="box">
+            <h3>Description</h3>
+            <p><b>&lt;b&gt;</b> → Makes text bold</p>
+            <p><b>&lt;i&gt;</b> → Italic style text</p>
+            <p><b>&lt;mark&gt;</b> → Highlights text</p>
+            <p><b>&lt;small&gt;</b> → Makes text smaller</p>
+            <p><b>&lt;del&gt;</b> → Shows deleted text</p>
+            <p><b>&lt;ins&gt;</b> → Shows inserted text</p>
+            <p><b>&lt;sub&gt;</b> → Subscript (used in formulas like H₂O)</p>
+            <p><b>&lt;sup&gt;</b> → Superscript (used in formulas like x²)</p>
+        </div>
+    </div>
+
 </body>
 </html>
