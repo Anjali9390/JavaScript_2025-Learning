@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fresher Job Application</title>
+
+    <style>
+        body{
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        .container{
+            width: 400px;
+            background: white;
+            padding: 20px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        h1{
+            text-align: center;
+        }
+        input, select{
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        .radio, .check{
+            width: auto;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        button:hover{
+            background: darkgreen;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Job Application Form</h1>
+
+<form onsubmit="return submitForm()">
+
+    <label>Email:</label>
+    <input type="email" id="email" required>
+
+    <label>Mobile:</label>
+    <input type="text" id="mobile" required>
+
+    <label>First Name:</label>
+    <input type="text" id="fname" required>
+
+    <label>Last Name:</label>
+    <input type="text" id="lname" required>
+
+    <label>Password:</label>
+    <input type="password" id="password" required>
+
+    <label>Gender:</label><br>
+    <input type="radio" class="radio" name="gender" value="Male"> Male
+    <input type="radio" class="radio" name="gender" value="Female"> Female
+    <br><br>
+
+    <label>Skills:</label><br>
+    <input type="checkbox" class="check" value="Java"> Java
+    <input type="checkbox" class="check" value="Spring Boot"> Spring Boot
+    <input type="checkbox" class="check" value="MySQL"> MySQL
+    <input type="checkbox" class="check" value="HTML"> HTML
+    <input type="checkbox" class="check" value="Other"> Other
+    <br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+</div>
+
+<script>
+function submitForm(){
+    let fname = document.getElementById("fname").value;
+    alert("Job Application Submitted Successfully! Welcome " + fname);
+    return false; // Prevent form refresh
+}
+</script>
+
+</body>
+</html>
