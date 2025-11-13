@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Movie Ticket</title>
+    <style>
+        body {
+            background-color: yellow;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            width: 400px;
+            margin: 60px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px red;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: darkgreen;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>🎬 Book Your Movie Ticket</h2>
+
+        <label>Movie Name:</label>
+        <select id="movie"> 
+            <option value="150">Hanuman</option>
+            <option value="250">Pushpa</option>
+            <option value="550">Salaar</option>
+            <option value="750">OG</option>
+        </select>
+
+        <label>Show Time:</label>
+        <select id="time">
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>02:30 PM</option>
+            <option>06:30 PM</option>
+            <option>09:00 PM</option>
+        </select>
+
+        <label>Tickets:</label>
+        <input type="number" id="tickets" min="1" value="1">
+
+        <button onclick="bookTicket()">Book Now</button>
+    </div>
+
+    <script>
+        function bookTicket() {
+            const movieName = document.getElementById('movie').options[document.getElementById('movie').selectedIndex].text;
+            const tickets = document.getElementById('tickets').value;
+            const price = document.getElementById('movie').value;
+            const total = tickets * price;
+            alert("🎟️ You booked " + tickets + " ticket(s) for " + movieName + 
+                  "\n💰 Total Price: ₹" + total);
+        }
+    </script>
+</body>
+</html>

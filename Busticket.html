@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Ticket Booking Application</title>
+
+    <style>
+        body {
+            background-color: red;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            width: 400px;
+            margin: 60px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: darkgreen;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bus Ticket Booking</h1>
+
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <br><br>
+
+        <label>Mobile Number:</label>
+        <input type="text" id="mobile" placeholder="Enter mobile number" required>
+        <br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br><br>
+
+        <label>Location:</label>
+        <select id="location">
+            <option value="2000">Hyderabad</option>
+            <option value="1500">Kalakodima</option>
+            <option value="3000">Vizag</option>
+            <option value="3600">Bangalore</option>
+        </select>
+        <br><br>
+
+        <button type="button" onclick="bookTicket()">Book Ticket</button>
+
+        <p id="output" style="text-align:center; font-weight:bold; color:darkblue;"></p>
+    </div>
+
+    <script>
+        function bookTicket() {
+            let name = document.getElementById("name").value;
+            let location = document.getElementById("location");
+            let price = location.value;
+            let place = location.options[location.selectedIndex].text;
+
+            document.getElementById("output").innerHTML = 
+                "Ticket Booked Successfully!<br>" + 
+                "Name: " + name + "<br>" +
+                "Destination: " + place + "<br>" +
+                "Total Fare: ₹" + price;
+        }
+    </script>
+</body>
+</html>
