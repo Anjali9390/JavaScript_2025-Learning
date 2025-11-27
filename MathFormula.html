@@ -1,0 +1,82 @@
+<html>
+    <head>
+   <title> Math formuls</title>
+   </head>
+   <style>
+    body
+    {
+        background-color: green;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+    }
+    h2
+    {
+        text-align: center;
+    }
+    .box
+    {
+        width: 400px;
+        marg
+    }
+   </style>
+   <body>
+    <h2> creating math formulas website</h2>
+   
+    <div class="box">
+        <h3>1. area of circle (A=πr²)</h3>
+        <input type="number" id="radius" placeholder="enter radius(r)">
+        <button onclick="areaCircle()">Calculate</button>
+        <p id="areaResult">Result:</p>
+</div>
+
+
+<div class="box">
+<h3> 2. speed (speed=distance/time)</h3>
+  <input type="number" id="dist" placeholder="enter distance">
+  <input type="number" id="time" placeholder="enter time">
+  <button onclick="speed()">Calculate</button>
+  <p id="speedResult">Result:</p>
+</div>
+
+
+<div class="box">
+<h3>3.Simple Intrest (ST=PTR/100)</h3>
+<input type="number" id="p" placeholder="enter principle(P)">
+<input type="number" id="t" placeholder="enter time(t)">
+<input type="number" id="r" placeholder="enter ratio(r)">
+<button onclick="SimpleIntrest()">Calculate</button>
+<p id="SimpleIntrestResult">Result:</p>
+</div>
+
+<script>
+function areaCircle()
+{
+    let r=Number(document.getElementById("radius").value);
+    let area = 3.1416 * r * r;
+    document.getElementById("areaResult").innerHTML = "Result: " + area.toFixed(2);
+}
+
+function speed()
+{
+    let d=Number(document.getElementById("dist").value);
+    let t=Number(document.getElementById("time").value)
+    if(t === 0){
+            alert("Time cannot be Zero");
+        } else {
+            let s = d / t;
+            document.getElementById("speedResult").innerHTML = "Result: " + s.toFixed(2) + " units/sec";
+        }
+    }
+
+    function simpleInterest(){
+        let p = Number(document.getElementById("p").value);
+        let r = Number(document.getElementById("r").value);
+        let t = Number(document.getElementById("t").value);
+        let si = (p * r * t) / 100;
+        document.getElementById("siResult").innerHTML = "Result: " + si.toFixed(2);
+    }
+</script>
+
+
+   </body>
+</html>
