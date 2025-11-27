@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Book Issue Form</title>
+
+    <style>
+        body {
+            background-color: rgb(230, 240, 255);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: darkgreen;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Book Issue Form</h1>
+
+    <label>Student Name</label>
+    <input type="text" id="name" placeholder="Enter student name">
+
+    <label>Book Name</label>
+    <input type="text" id="book" placeholder="Enter book name">
+
+    <label>Issue Date</label>
+    <input type="date" id="issuedate">
+
+    <label>Return Date</label>
+    <input type="date" id="returndate">
+
+    <button onclick="issuebook()">Issue Book</button>
+</div>
+
+<script>
+    function issuebook() {
+        let name = document.getElementById("name").value;
+        let book = document.getElementById("book").value;
+        let issueDate = document.getElementById("issuedate").value;
+        let returnDate = document.getElementById("returndate").value;
+
+        if (name === "" || book === "" || issueDate === "" || returnDate === "") {
+            alert("❗ Please fill all details");
+            return;
+        }
+
+        let issue = new Date(issueDate);
+        let ret = new Date(returnDate);
+
+        let timeDifference = ret - issue;
+        let daysUsed = timeDifference / (1000 * 3600 * 24);
+
+        if (daysUsed < 0) {
+            alert("❗ Return date must be after issue date!");
+            return;
+        }
+
+        alert(
+            "📚 Book Issued Successfully!\n\n" +
+            "Student Name: " + name + "\n" +
+            "Book Name: " + book + "\n" +
+            "Issue Date: " + issueDate + "\n" +
+            "Return Date: " + returnDate + "\n" +
+            "Total Days: " + daysUsed + " days"
+        );
+    }
+</script>
+
+</body>
+</html>
