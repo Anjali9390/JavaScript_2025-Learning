@@ -1,0 +1,111 @@
+<html>
+    <head> creationg Online Quiz Test</head>
+    <style>
+        body
+        {
+
+            background-color: rgb(from color r g b);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container
+        {
+            width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        h1{
+            text-align: center;
+            color:navy;
+        }
+         .question {
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        button{
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: darkgreen;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: blue;
+            margin-top: 15px;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <h1> html Mcq questions</h1>
+         <!-- Question 1 -->
+          <p class="question">1. HTML stands for?</p>
+    <input type="radio" name="q1" value="0"> Hyperlinks and Text Markup Language <br>
+    <input type="radio" name="q1" value="1"> Hyper Text Markup Language <br>
+    <input type="radio" name="q1" value="0"> High Text Machine Language <br>
+
+         
+    <!-- Question 2 -->
+    <p class="question">2. CSS is used for?</p>
+    <input type="radio" name="q2" value="1"> Styling web pages <br>
+    <input type="radio" name="q2" value="0"> Storing data <br>
+    <input type="radio" name="q2" value="0"> Linking database <br>
+
+    <!-- Question 3 -->
+    <p class="question">3. Which tag is used for inserting a line break?</p>
+    <input type="radio" name="q3" value="1"> &lt;br&gt; <br>
+    <input type="radio" name="q3" value="0"> &lt;lb&gt; <br>
+    <input type="radio" name="q3" value="0"> &lt;break&gt; <br>
+
+    <!-- Question 4 -->
+    <p class="question">4. JavaScript is a _____ language?</p>
+    <input type="radio" name="q4" value="0"> Server-side <br>
+    <input type="radio" name="q4" value="1"> Client-side <br>
+    <input type="radio" name="q4" value="0"> None <br>
+
+    <!-- Question 5 -->
+    <p class="question">5. Which symbol is used for comments in JavaScript?</p>
+    <input type="radio" name="q5" value="1"> // <br>
+    <input type="radio" name="q5" value="0"> # <br>
+    <input type="radio" name="q5" value="0"> /** */ <br>
+
+    <button onclick="calculateScore()">Submit Test</button>
+    <p id="result">Your Score: ----</p>
+           <script>
+function calculateScore() {
+    let score = 0;
+
+    for (let i = 1; i <= 5; i++) {
+        let answer = document.querySelector('input[name="q' + i + '"]:checked');
+        if (answer) {
+            score += parseInt(answer.value);
+        }
+    }
+    let resultMessage = "";
+
+    if (score >= 3) { 
+        resultMessage = "🎉 Congratulations! You Passed!";
+    } else {
+        resultMessage = "❌ You Failed! Try Again 😊";
+    }
+
+    document.getElementById("result").innerHTML =
+        "Your Score: " + score + "/5<br>" + resultMessage;
+}
+    
+</script>
+        </div>
+    </body>
+</html>
