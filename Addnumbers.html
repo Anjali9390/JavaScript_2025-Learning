@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Creating JavaScript Using Variables to Add Two Numbers</title>
+        <style>
+            body {
+                background-color: green;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .container {
+                width: 500px;
+                margin: 50px auto;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px gray;
+            }
+            h1 {
+                text-align: center;
+                color: red;
+            }
+            input {
+                width: 100%;
+                padding: 10px;
+                margin-top: 8px;
+                border-radius: 5px;
+                border: 1px solid gray;
+            }
+            button {
+                width: 100%;
+                padding: 10px;
+                margin-top: 15px;
+                background: green;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+
+<body>
+    <div class="container">
+        <h1>Add the Two Numbers</h1>
+
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+
+        <button onclick="add()">Add Them</button>
+
+        <p id="result">Result:</p>
+
+        <script>
+            function add() {
+                let var1 = parseFloat(document.getElementById('num1').value);
+                let var2 = parseFloat(document.getElementById('num2').value);
+
+                let totalsum = var1 + var2;
+                document.getElementById('result').innerText = "Result: " + totalsum;
+            }
+        </script>
+
+    </div>
+</body>
+</html>
