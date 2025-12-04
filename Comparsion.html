@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparison Operators Demo</title>
+</head>
+<body>
+    <h2>JavaScript Comparison</h2>
+    <p>Open your browser's developer console (F12, then go to the "Console" tab) to see the output.</p>
+
+    <script>
+        let numA = 5;
+        let strB = "5";
+        let numC = 10;
+
+        document.write("--- Equality Checks ---");
+
+        document.write(`5 == "5": ${numA == strB}`); // true
+
+         document.write(`5 === "5": ${numA === strB}`); 
+         document.write("--- Inequality Checks ---");
+         document.write(`5 !== "5": ${numA !== strB}`);
+
+         document.write("--- Relational Checks ---");
+         document.write(`5 < 10: ${numA < numC}`);   
+         document.write(`10 >= 10: ${numC >= numC}`); 
+         document.write(`10 < 5: ${numC < numA}`);   
+
+    </script>
+</body>
+</html>
