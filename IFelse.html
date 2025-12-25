@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation of Eligible to Vote</title>
+</head>
+<body>
+    <h1>Elections votes</h1>
+    <label for="ageInput">Enter your age:</label>
+    
+    <input type="number" id="ageInput" min="1" max="120" oninput="checkEligibility()">
+    
+    <p id="result"></p>
+
+    <script>
+        function checkEligibility() {
+            
+            let age = document.getElementById("ageInput").value;
+            let resultElement = document.getElementById("result");
+
+           
+            if (isNaN(age) || age === "") {
+                resultElement.textContent = "Please enter a valid age.";
+                resultElement.style.color = "black";
+                return;
+            }
+
+            
+            age = parseInt(age, 10);
+
+            if (age >= 18) {
+                resultElement.textContent = "You are eligible to vote!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "You are not eligible to vote yet.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
