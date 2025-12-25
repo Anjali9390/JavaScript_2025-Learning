@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title> check for palindrome (or) Not </title>
+    </head>
+    <body>
+        <h1> Palindrome Checking</h1>
+        <p>palindrome is a sequence of characters, words, or numbers that reads 
+            the same backward as it does forward, ignoring spaces and capitalization </p>
+            <label for="number"> enter number</label>
+            <input type="number" id="number" min="1" max="120"  oninput="checkpalindrome()">
+
+            <p id="result"></p>
+
+        <script>
+            function checkpalindrome()
+            {
+                const input=document.getElementById("number").value;
+                const resultDisplay=document.getElementById("result");
+                if(input==="")
+            {
+                  resultDisplay.innerText=" ";
+                  return;
+            }
+            const reversed=input.split('').reverse().join('');
+            if(input==reversed)
+            {
+                resultDisplay.innerText = input + " is a Palindrome";
+                resultDisplay.style.color = "green";
+            }
+            else 
+            {
+                resultDisplay.innerText = input + " is NOT a Palindrome";
+                resultDisplay.style.color = "red";
+            }
+            }
+        </script>
+    </body>
+</html>
